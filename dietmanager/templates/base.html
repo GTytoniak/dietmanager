@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html>
+    <head>
+    	<title>Dietmanager</title>
+    	<meta charset="utf-8">
+    	{% load staticfiles %}
+    	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css"/>
+    </head>
+    <body class="body" style="background-color:#f6f6f6">
+        <h1> <p class="text-center"> <b>Diet manager </b></p> </h1>
+			<h2><p class="text-center"><small> Make your own diet plan in just few small steps</small></h2>
+			{% if user.is_authenticated %}
+			<p class="text-right">Logged user: {{user}}
+			<a href="{% url 'logout' %}"><button value="logout" class="btn btn-danger">Logout</button></a></p>
+			{% else %}
+			<p class="text-right">Anonymous user, go to
+			<a href="{% url 'login' %}"><button value="login" class="btn btn-primary">Login</button></a>
+			or
+			<a href="{% url 'create_user' %}"><button value="create_user" class="btn btn-success">Create user</button></a></p>
+			{% endif %}
+			<br><hr>
+			<p class="text-center"><a href="/home"><button class="btn btn-primary btn-lg">Main page</button></a>
+			<a href="/user/{{user.id}}"><button value="user" class="btn btn-success btn-lg">User profile</button></a>
+			<a href="/dishes/{{user.id}}"><button class="btn btn-primary btn-lg">Your meal</button></a>
+			<a href="/products"><button value="user" class="btn btn-danger btn-lg">All meals</button></a>
+			<a href="#" class="btn btn-info btn-lg disabled" role="button">FAQ</a>
+			<a href="#" class="btn btn-danger btn-lg disabled" role="button">Prohibited things</a></p>
+			
+			
+			<hr>
+		{% block content %}
+      
+        {% endblock %}
+    </body>
+</html>

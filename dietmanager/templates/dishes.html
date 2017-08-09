@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+	
+		<h2><p class="text-center">Your menu for today is:</h2></p>><br>
+		<p class="text-center"><strong> Breakfast: </strong>
+		{{breakfastdish.name}}, kcal: {{breakfastdish.kcal}}<br></p>
+		<p class="text-center"><strong> Brunch: </strong>
+		{{brunchdish.name}}, kcal: {{brunchdish.kcal}}<br></p>
+		<p class="text-center"><strong> Dinner: </strong>
+		{{dinnerdish.name}}, kcal: {{dinnerdish.kcal}}<br></p>
+		<p class="text-center"><strong> Supper: </strong>
+		{{supperdish.name}}, kcal: {{supperdish.kcal}}<br></p>
+		
+		<h3><p class="text-center"> Total kcal: {{totalkcal}}</p></h3>
+	
+	
+	
+{% endblock %}
+
+</html>

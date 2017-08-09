@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+        <h2>Rejestracja użytkownika</h2><br>
+        <form action= "{% url 'create_user' %}" method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" value="OK" />
+		</form>
+        
+{% endblock %}
